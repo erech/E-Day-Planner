@@ -7,4 +7,4 @@ It also includes regular business hours to enable the user to input their todos 
 # Webpage
 ![Webpage Screenshot](Develop/assets/images/planner image.png)
 
-URL: 
+URL: https://erech.github.io/E-Day-Planner/
