@@ -5,6 +5,6 @@ The scheduler includes the day, date, and time. <br/>
 It also includes regular business hours to enable the user to input their todos for a specific hour. <br/>
 
 # Webpage
-![Webpage Screenshot](assets\images\planner image.png)
+![Webpage Screenshot](Develop\assets\images\planner image.png)
 
 URL: 
