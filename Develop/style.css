@@ -1,5 +1,12 @@
+:root {
+  --med-color: #aeb5ec;
+  --dark-color: #3a4c73;
+  --light-color: #f2e7fe;
+  --accent-green: #9eccb3;
+}
+
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 1;
 }
@@ -8,24 +15,23 @@ textarea{
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
+  color: var(--dark-color)
+
 }
 
 .jumbotron {
   text-align: center;
   background-color: transparent;
-  color: black;
+  color: var(--dark-color);
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 10px solid var(--dark-color);
 }
 
 .lead, 
 .currentDay,
 .currentTime {
   text-align: center;
-  color: black;
+  color: var(--dark-color);
   font-weight: bold;
   font-size: 16px;
   padding-bottom: 0px;
@@ -42,12 +48,14 @@ textarea{
 .container{
   display: flex;
   width: 100%;
-  background-color: beige;
+  background-color: var(--light-color);
   padding: 20px;
 }
 
 .description{
   white-space: pre-wrap;
+  border: 1px solid var(--dark-color);
+	border-radius: 25px;
   width: 900px;
   height: 80px;
 }
@@ -61,18 +69,20 @@ textarea{
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border: 1px solid var(--dark-color);
+	border-radius: 25px;
 }
 
 .hour {
   background-color: #ffffff;
   width: 130px;
   height: 80px;
-  color: #000000;
-  border-top: 1px dashed #000000;
+  color: var(--dark-color);
   font-size: 1rem;
   text-align: center;
   padding-top: 28px;
+  border: 1px solid var(--dark-color);
+	border-radius: 25px;
 }
 
 .past {
@@ -86,22 +96,21 @@ textarea{
 }
 
 .future {
-  background-color: #77dd77;
-  color: white;
+  background-color: var(--accent-green)
 }
 
 .saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06AED5;
+  background-color: var(--dark-color);
   color: white;
   float: right;
   height: 80px;
   width: 90px;
+  border: 1px solid var(--dark-color);
+	border-radius: 25px;
 }
 
-.saveBtn i:hover {
+.saveBtn:hover {
   font-size: 16px;
-  transition: all .3s ease-in-out;
+  background-color: var(--med-color);
+  transition: all .2s ease-in-out;
 }

@@ -7,40 +7,31 @@ currentTime = moment().format("HH:mm a")
 $(".currentDay").text(currentDay) 
 $(".currentTime").text(currentTime)
 
-//function checks time of row
+//function checks time of row + colorcodes using else-if conditions 
 const rows = document.querySelector("hour")
 let currentHour = parseInt(moment().format('H'))
 
-
-// for (var i = 0, row; row = rows[i]; i++) {
-//     let 
-//     rowIdString = row.id, rowHour;
-//     console.log(rowIdString)
-//     if (rowIdString) {
-//         rowHour = parseInt(rowIdString) 
-//     }
-//     if(rowHour) {
-//         if(currentHour === rowHour) {
-//             setColor(row,"green")
-//         } else if((currentHour < rowHour) && (currentHour > rowHour - 6)) {
-//             setColor(row, "grey")
-//         } else if((currentHour > rowHour) && (currentHour < rowHour + 6)) {
-//             setColor(row, "lightblue")
-//         } else{
-//             setColor(row, "white")
-//         }
-//     }
-
-// }
-
-// //Function to indicate if timeslot has passed
-// function colorIndicator() {
-//     if (currentTime ===  ) {
-
-//     }
-// }
-
-
+function colorCode() {
+for (var i = 0, row; row = rows[i]; i++) {
+    let 
+    rowIdString = row.id, rowHour;
+    console.log(rowIdString)
+    if (rowIdString) {
+        rowHour = parseInt(rowIdString) 
+    }
+    if(rowHour) {
+        if(currentHour === rowHour) {
+            setColor(row,"green")
+        } else if((currentHour < rowHour) && (currentHour > rowHour - 6)) {
+            setColor(row, "grey")
+        } else if((currentHour > rowHour) && (currentHour < rowHour + 6)) {
+            setColor(row, "lightblue")
+        } else{
+            setColor(row, "white")
+        }
+    }
+    colorCode()
+}}
 
 
 
@@ -51,7 +42,14 @@ var inputs = []
 
 function renderInputs() {
     description.innerHTML = ""
-    console.log(inputs)
+    inputs.textContent = inputs.length
+
+    for (var i = 0; i < inputs.length; i++) {
+        var input = inputs[i] 
+
+        description.textContent = input
+        description.setAttribute("data-index", i)
+    }
 }
 
 //Get stored inputs from LocalStorage
@@ -62,12 +60,15 @@ function init() {
         inputs = storedInputs 
     }
     renderInputs()
+
 }
 
 //Save inputs in localStorage
 function storeInput() {
     localStorage.setItem("inputs", JSON.stringify(inputs))
+
 }
+
 
 //listens for save button and stores input made render to the page
 saveBtn.addEventListener("click", function(event) {
